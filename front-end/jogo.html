@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <link rel="stylesheet" href="jogo.css">
+        <script src="https://unpkg.com/axios/dist/axios.min.js"> </script>
+        <script src="jogo.js"> </script>
+    </header>
+    <body>
+        <h1 class="titulo">Jogo da Velha</h1>       
+        <div class="jogo">
+            <div class="linha">
+                <button class="bt-tabuleiro" id="0" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="1" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="2" onClick=btClick(this.id)>-</button>
+            </div>
+            <div class="linha">
+                <button class="bt-tabuleiro" id="3" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="4" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="5" onClick=btClick(this.id)>-</button>
+            </div>
+            <div class="linha">
+                <button class="bt-tabuleiro" id="6" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="7" onClick=btClick(this.id)>-</button>
+                <button class="bt-tabuleiro" id="8" onClick=btClick(this.id)>-</button>
+            </div>
+        </div>
+        <button class="bt-jogar" id="jogar" onClick=btJogar()>Jogar</button>
+        <p class="infos" id="infos">-</p>
+    </body>
+</html>

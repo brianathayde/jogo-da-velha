@@ -1,0 +1,36 @@
+
+.titulo{
+    text-align:center;
+}
+
+.jogo{
+    display: flex;
+    flex-direction: column;
+}
+.bt-tabuleiro{
+    width: 10vw;
+    height: 10vw;
+    font-size:  50px;
+    color: white;
+    background-color: white;
+}
+.bt-jogar{
+    width: 20vw;
+    height: 4vw;
+    font-size:  30px;
+    color: white;
+    background-color: dodgerblue;
+    position: relative;
+    margin: 0;
+    left: calc(40vw - 5px);
+    margin-top: 5px;
+}
+.linha{
+    text-align: center;
+}
+.infos{
+    font-size:  20px;
+    text-align: center;
+    margin-top: 10px;
+    visibility: hidden;
+}
