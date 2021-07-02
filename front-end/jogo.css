@@ -3,6 +3,22 @@
     text-align:center;
 }
 
+.jogador1{
+    text-align:left;
+    margin-top: 13vh;
+}
+
+.jogador2{
+    text-align:right;
+    margin-top: 13vh;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+
 .jogo{
     display: flex;
     flex-direction: column;
@@ -20,10 +36,10 @@
     font-size:  30px;
     color: white;
     background-color: dodgerblue;
-    position: relative;
-    margin: 0;
-    left: calc(40vw - 5px);
+    text-align: center;
+    margin-left: 6.5vw;
     margin-top: 5px;
+    visibility: hidden;
 }
 .linha{
     text-align: center;

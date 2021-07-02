@@ -6,25 +6,49 @@
         <script src="jogo.js"> </script>
     </header>
     <body>
-        <h1 class="titulo">Jogo da Velha</h1>       
-        <div class="jogo">
-            <div class="linha">
-                <button class="bt-tabuleiro" id="0" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="1" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="2" onClick=btClick(this.id)>-</button>
+        <div class="main">
+            <div>
+                <h2 id="h2-jogador1" class="jogador1">Jogador 1</h2>  
+                <label for="fname">Nome:</label>
+                <input id="txt-jogador1" type="text" name="fname" value="Jogador 1"> 
+                <button id="bt-jogador1" onClick=btNomeJogador(this.id)>ok</button>                     
+                <label>Vitórias:</label>  
+                <label id="vitorias-jogador1">0</label>              
+                <label>Derrotas:</label>  
+                <label id="derrotas-jogador1">0</label>  
             </div>
-            <div class="linha">
-                <button class="bt-tabuleiro" id="3" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="4" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="5" onClick=btClick(this.id)>-</button>
+            <div>
+                <h1 class="titulo">Jogo da Velha</h1>       
+                <div class="jogo">
+                    <div class="linha">
+                        <button class="bt-tabuleiro" id="0" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="1" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="2" onClick=btClick(this.id)>-</button>
+                    </div>
+                    <div class="linha">
+                        <button class="bt-tabuleiro" id="3" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="4" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="5" onClick=btClick(this.id)>-</button>
+                    </div>
+                    <div class="linha">
+                        <button class="bt-tabuleiro" id="6" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="7" onClick=btClick(this.id)>-</button>
+                        <button class="bt-tabuleiro" id="8" onClick=btClick(this.id)>-</button>
+                    </div>
+                </div>           
+                <button class="bt-jogar" id="jogar" onClick=btJogar()>Jogar</button>
+                <p class="infos" id="infos">-</p>
             </div>
-            <div class="linha">
-                <button class="bt-tabuleiro" id="6" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="7" onClick=btClick(this.id)>-</button>
-                <button class="bt-tabuleiro" id="8" onClick=btClick(this.id)>-</button>
+            <div>
+                <h2 id="h2-jogador2" class="jogador2">Jogador 2</h2>  
+                <label for="fname">Nome:</label>
+                <input id="txt-jogador2" type="text" name="fname" value="Jogador 2"> 
+                <button id="bt-jogador2" onClick=btNomeJogador(this.id)>ok</button>                     
+                <label>Vitórias:</label>  
+                <label id="vitorias-jogador2">0</label>              
+                <label>Derrotas:</label>  
+                <label id="derrotas-jogador2">0</label>
             </div>
         </div>
-        <button class="bt-jogar" id="jogar" onClick=btJogar()>Jogar</button>
-        <p class="infos" id="infos">-</p>
     </body>
 </html>
