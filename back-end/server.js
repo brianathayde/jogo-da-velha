@@ -5,6 +5,8 @@ var apiJogo = require("./apiJogo");
 var tabuleiro  = require("./tabuleiro");
 var app = express();
 const PORT = 8080;
+const Jogador = require('./Jogador').Jogador;
+var db  = require("./db");
 
 tabuleiro.start();
 
@@ -41,4 +43,26 @@ app.post('/jogar', function(req, res){
         tabuleiro.start();
     }
     res.json(apiJogo.jogar());
+});
+
+
+app.post('/setjogador1', function(req, res){
+    var jogador = req.body; 
+    db.setJogador(jogador, function(jogadorCallback){
+        tabuleiro.setJogador1(new Jogador(jogadorCallback.nome, jogadorCallback.vitorias, jogadorCallback.derrotas));
+        console.log(tabuleiro.getJogador1());
+        res.json(jogadorCallback);
+    });
+});
+
+// Precisa dos dois posts pq cada jogador vai ter uma instancia pra depois saber quem ganhou
+// porém o codigo pro banco de dados fica inalterado  
+
+app.post('/setjogador2', function(req, res){
+    var jogador = req.body; 
+    db.setJogador(jogador, function(jogadorCallback){
+        tabuleiro.setJogador2(new Jogador(jogadorCallback.nome, jogadorCallback.vitorias, jogadorCallback.derrotas));
+        console.log(tabuleiro.getJogador2());
+        res.json(jogadorCallback);
+    });
 });
