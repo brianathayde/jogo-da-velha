@@ -32,7 +32,39 @@ app.post('/jogadas', function(req, res){
     tabuleiro.addPeca(dados.x, dados.y);
     console.log(dados);
     console.log(tabuleiro.vitoria());
+    
+    if(tabuleiro.vitoria() != "-"){
+        if(tabuleiro.vitoria() == tabuleiro.getJogador1().nome){
+            let jogador1 = tabuleiro.getJogador1();
+            jogador1.vitorias +=1;
+            db.updateJogador(jogador1, function(jogadorCallback){
+                tabuleiro.setJogador1(jogador1.nome, jogador1.vitorias, jogador1.derrotas);
+                console.log(tabuleiro.getJogador1());
+            });
 
+            let jogador2 = tabuleiro.getJogador2();
+            jogador2.derrotas +=1;
+            db.updateJogador(jogador2, function(jogadorCallback){
+                tabuleiro.setJogador2(jogador2.nome, jogador2.vitorias, jogador2.derrotas);
+                console.log(tabuleiro.getJogador2());
+            });
+        }
+        else if(tabuleiro.vitoria() == tabuleiro.getJogador2().nome){
+            let jogador2 = tabuleiro.getJogador2();
+            jogador2.vitorias +=1;
+            db.updateJogador(jogador2, function(jogadorCallback){
+                tabuleiro.setJogador2(jogador2.nome, jogador2.vitorias, jogador2.derrotas);
+                console.log(tabuleiro.getJogador2());
+            });
+
+            let jogador1 = tabuleiro.getJogador1();
+            jogador1.derrotas +=1;
+            db.updateJogador(jogador1, function(jogadorCallback){
+                tabuleiro.setJogador1(jogador2.nome, jogador2.vitorias, jogador2.derrotas);
+                console.log(tabuleiro.getJogador1());
+            });
+        }
+    }
     res.json(apiJogo.jogadas());
 });
 
