@@ -50,7 +50,7 @@ function updateJogador(jogador, callback) {
   MongoClient.connect(url, function(err, client) {
     const db = client.db(dbName);
 
-    const collection = db.collection(dbCollection);x
+    const collection = db.collection(dbCollection);
     collection.updateOne({nome: jogador.nome }, { $set: { vitorias: jogador.vitorias, derrotas: jogador.derrotas } }, function(err, result) {
     
       callback(result);
