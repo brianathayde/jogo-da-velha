@@ -5,6 +5,7 @@ matrizTabuleiro[0] =new Array(3);
 matrizTabuleiro[1] =new Array(3);
 matrizTabuleiro[2] =new Array(3);
 
+var jogador1, jogador2;
 
 var pecaDesativada = "DESATIVADA";
 const PECA_X = "X";
@@ -58,30 +59,30 @@ function vitoria(){
     if((matrizTabuleiro[0][0] == PECA_X && matrizTabuleiro[1][0] == PECA_X && matrizTabuleiro[2][0] == PECA_X) ||
     (matrizTabuleiro[0][1] == PECA_X && matrizTabuleiro[1][1] == PECA_X && matrizTabuleiro[2][1] == PECA_X) ||
     (matrizTabuleiro[0][2] == PECA_X && matrizTabuleiro[1][2] == PECA_X && matrizTabuleiro[2][2] == PECA_X)){
-        vencedor = VITORIA_X;
+        vencedor = jogador1.nome;
     }
     else if((matrizTabuleiro[0][0] == PECA_X && matrizTabuleiro[0][1] == PECA_X && matrizTabuleiro[0][2] == PECA_X) ||
     (matrizTabuleiro[1][0] == PECA_X && matrizTabuleiro[1][1] == PECA_X && matrizTabuleiro[1][2] == PECA_X) ||
     (matrizTabuleiro[2][0] == PECA_X && matrizTabuleiro[2][1] == PECA_X && matrizTabuleiro[2][2] == PECA_X)) {
-        vencedor = VITORIA_X;
+        vencedor = jogador1.nome;
     } 
     else if((matrizTabuleiro[0][0] == PECA_X && matrizTabuleiro[1][1] == PECA_X && matrizTabuleiro[2][2] == PECA_X) ||
     (matrizTabuleiro[0][2] == PECA_X && matrizTabuleiro[1][1] == PECA_X && matrizTabuleiro[2][0] == PECA_X)) {
-        vencedor = VITORIA_X;
+        vencedor = jogador1.nome;
     }  
     else if((matrizTabuleiro[0][0] == PECA_O && matrizTabuleiro[1][0] == PECA_O && matrizTabuleiro[2][0] == PECA_O) ||
     (matrizTabuleiro[0][1] == PECA_O && matrizTabuleiro[1][1] == PECA_O && matrizTabuleiro[2][1] == PECA_O) ||
     (matrizTabuleiro[0][2] == PECA_O && matrizTabuleiro[1][2] == PECA_O && matrizTabuleiro[2][2] == PECA_O)){
-        vencedor = VITORIA_O;
+        vencedor = jogador2.nome;
     }
     else if((matrizTabuleiro[0][0] == PECA_O && matrizTabuleiro[0][1] == PECA_O && matrizTabuleiro[0][2] == PECA_O) ||
     (matrizTabuleiro[1][0] == PECA_O && matrizTabuleiro[1][1] == PECA_O && matrizTabuleiro[1][2] == PECA_O) ||
     (matrizTabuleiro[2][0] == PECA_O && matrizTabuleiro[2][1] == PECA_O && matrizTabuleiro[2][2] == PECA_O))  {
-        vencedor = VITORIA_O;
+        vencedor = jogador2.nome;
     }
     else if((matrizTabuleiro[0][0] == PECA_O && matrizTabuleiro[1][1] == PECA_O && matrizTabuleiro[2][2] == PECA_O) ||
     (matrizTabuleiro[0][2] == PECA_O && matrizTabuleiro[1][1] == PECA_O && matrizTabuleiro[2][0] == PECA_O))  {
-        vencedor = VITORIA_O;      
+        vencedor = jogador2.nome;     
     }
     else if(jogada >=9){
         vencedor = EMPATE;
@@ -98,11 +99,30 @@ function fimDeJogo(){
     return gg;
 }
 
+function setJogador1(j){
+    jogador1 = j;
+}
+
+function getJogador1(){
+    return jogador1;
+}
+
+function setJogador2(j){
+    jogador2 = j;
+}
+
+function getJogador2(){
+    return jogador2;
+}
 
 exports.start = start;
 exports.addPeca = addPeca;
 exports.pecaJogada = pecaJogada;
 exports.vitoria = vitoria;
 exports.fimDeJogo = fimDeJogo;
+exports.setJogador1 = setJogador1;
+exports.getJogador1 = getJogador1;
+exports.setJogador2 = setJogador2;
+exports.getJogador2 = getJogador2;
 
 
